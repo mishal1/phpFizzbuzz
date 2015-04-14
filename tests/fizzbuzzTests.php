@@ -39,40 +39,24 @@ class FizzbuzzTest extends PHPUnit_Framework_TestCase{
   }
 
   public function testSaysFizz(){
-    $expected = 'Fizz';
-    $actual = $this->fizzbuzz->says(3);
-    $this->assertEquals($expected, $actual);
+    $this->fizzbuzzSaysTest('Fizz', 3);
   }
 
   public function testSaysBuzz(){
-    $expected = 'Buzz';
-    $actual = $this->fizzbuzz->says(5);
-    $this->assertEquals($expected, $actual);
+    $this->fizzbuzzSaysTest('Buzz', 5);
   }
 
   public function testSaysFizzBuzz(){
-    $expected = 'Fizzbuzz';
-    $actual = $this->fizzbuzz->says(15);
-    $this->assertEquals($expected, $actual);
+    $this->fizzbuzzSaysTest('Fizzbuzz', 15);
   }
 
   public function testSaysNumber(){
-    $expected = 1;
-    $actual = $this->fizzbuzz->says(1);
+    $this->fizzbuzzSaysTest(1, 1);
+  }
+
+  private function fizzbuzzSaysTest($expected, $number){
+    $actual = $this->fizzbuzz->says($number);
     $this->assertEquals($expected, $actual);
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
